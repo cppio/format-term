@@ -2,7 +2,7 @@
 ANSI escape codes in Python
 
 ## usage
-`ansi(bold, underlined, inverse, foreground, background) => str`
+```ansi(bold, underlined, inverse, foreground, background) => str```
 By default `ansi()` does not actually change anything.
 `bold`, `underlined`, and `inverse` can be set to `None` to signify no change, `True` to enable them, or `False` to disable them.
 `foreground` and `background` can be set to an `int` in `colors` or `brightcolors`, or a `color` object for true color.
