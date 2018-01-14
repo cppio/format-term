@@ -16,4 +16,5 @@ By default `ansi()` does not actually change anything.
 `inverse(string)`
 `foreground(color, string)`
 `background(color, string)`
+
 These functions wrap a string and set the respective property.
