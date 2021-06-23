@@ -51,3 +51,29 @@ def foreground(color, string):
 
 def background(color, string):
     return ansi(background=color) + string + ansi(background=colors.default)
+
+if __name__ == "__main__":
+    print("styles:")
+    print(bold("bold"))
+    print(underlined("underlined"))
+    print(inverse("inverse"))
+
+    print("\ncolors:")
+    for name in colors._fields:
+        print(end=background(getattr(colors, name), "  "))
+    print()
+    for name in brightcolors._fields:
+        print(end=background(getattr(brightcolors, name), "  "))
+
+    print("\n\ncolor cube:")
+    for g in range(0, 256, 32): # type: int
+        for r in range(0, 256, 32): # type: int
+            for b in range(0, 256, 32): # type: int
+                print(end=background(color(r, g, b), "  "))
+            print(end=" ")
+        print()
+
+    print("\ngrayscale ramp:")
+    for v in range(0, 256, 2): # type: int
+        print(end=background(color(v, v, v), " "))
+    print()
